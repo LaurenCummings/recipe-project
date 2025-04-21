@@ -1,7 +1,7 @@
-function RecipeItem() {
+function RecipeItem({item}) {
     return (
         <div>
-
+            RecipeItem
         </div>
     )
 }
