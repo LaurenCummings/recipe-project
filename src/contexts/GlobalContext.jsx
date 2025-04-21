@@ -26,6 +26,8 @@ function GlobalState({ children }) {
         }
     }
 
+    console.log(recipeList);
+
     return (
         <GlobalContext.Provider value={{ searchParam, loading, recipeList, setSearchParam, handleSubmit }}>
             {children}
