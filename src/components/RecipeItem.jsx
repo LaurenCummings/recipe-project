@@ -1,4 +1,4 @@
-function RecipeList() {
+function RecipeItem() {
     return (
         <div>
 
@@ -6,4 +6,4 @@ function RecipeList() {
     )
 }
 
-export default RecipeList;
+export default RecipeItem;
