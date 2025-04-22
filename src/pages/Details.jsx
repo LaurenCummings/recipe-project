@@ -11,15 +11,26 @@ function Details() {
             const response = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${id}`);
             const data = await response.json();
 
-            console.log(data);
+            if (data?.data) {
+                setRecipeDetailsData(data?.data);
+            }
         }
 
         getRecipeDetails();
     },[])
 
+    console.log(recipeDetailsData, 'recipeDetailsData');
+
     return (
-        <div>
-            Details
+        <div className="container mx-auto py-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div className="row-start-2 lg:row-start-auto">
+                <div className="h-96 overflow-hidden rounded-xl group">
+                    <img 
+                        src={recipeDetailsData?.recipe?.image_url} 
+                        className="w-full h-full object-cover block group-hover:scale-105 duration-300"
+                    />
+                </div>
+            </div>
         </div>
     )
 }
