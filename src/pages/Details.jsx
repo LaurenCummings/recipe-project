@@ -5,7 +5,7 @@ import { GlobalContext } from '../contexts/GlobalContext';
 function Details() {
     const [loading, setLoading] = useState(false);
     const {id} = useParams();
-    const {recipeDetailsData, setRecipeDetailsData} = useContext(GlobalContext)
+    const {recipeDetailsData, setRecipeDetailsData, handleAddToFavorites} = useContext(GlobalContext)
 
     useEffect(() => {
         async function getRecipeDetails() {
@@ -42,7 +42,9 @@ function Details() {
                 <span className="text-sm text-cyan-700 font-medium">{recipeDetailsData?.recipe?.publisher}</span>
                 <h3 className="font-bold text-2xl truncate text-black">{recipeDetailsData?.recipe?.title}</h3>
                 <div>
-                    <button className="p-3 px-8 rounded-lg text-sm uppercase font-medium tracking-wider mt-3 inline-block shadow-md bg-black text-white">
+                    <button 
+                        onClick={() => handleAddToFavorites(recipeDetailsData?.recipe)}
+                        className="p-3 px-8 rounded-lg text-sm uppercase font-medium tracking-wider mt-3 inline-block shadow-md bg-black text-white">
                         Save to Favorites
                     </button>
                 </div>
