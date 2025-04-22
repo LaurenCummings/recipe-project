@@ -39,6 +39,21 @@ function Details() {
                         Save to Favorites
                     </button>
                 </div>
+                <div>
+                    <span className="text-2xl font-semibold text-black">Ingredients:</span>
+                    <ul className="flex flex-col gap-3">
+                        {recipeDetailsData?.recipe?.ingredients.map((ingredient) => ( <li>
+                            <span className="text-2xl font-semibold text-black">    
+                                {ingredient.quantity} {ingredient.unit}
+                            </span>
+                            &nbsp;
+                            <span className="text-2xl font-semibold text-black">
+                                {ingredient.description}
+                            </span>
+                        </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
     )
